@@ -1,0 +1,200 @@
+/* 
+
+write your code here
+
+*/
+
+@media print {
+    body {
+        background: transparent;
+        padding-top: 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .flex-2-col {
+        display: flex;
+        align-items: center;
+    }
+    .tm-team-description-container .tm-section-title {
+        margin-top: 220px;
+        margin-left: 10px; 
+    }
+    .blocks .tm-team-description-container .tm-section-title {
+        margin-top: 0;
+    }
+    section:not(:first-of-type) {
+        display: none;
+    }
+    #about,
+    .tm-sidebar {
+        display: none;
+    }
+    .padding-medium,
+    .tm-banner {
+        padding: 0;
+    }
+    .tm-banner {
+        margin-top: 100px;
+    }
+    .flex-item>img {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 300px;
+        height: 180px;
+    }
+    .tm-content-box .tm-team-description-container {
+        width: 420px;
+    }
+    .tm-team-description-container .tm-section-title {
+        margin-top: 0;
+    }
+    p::first-letter {
+        color: #87CEFA;
+        font-size: 30px;
+    }
+    p:not(.tm-banner-text) {
+        line-height: 2em;
+        text-indent: 1em;
+    }
+    h2+p {
+        font-style: italic;
+    }
+    .tm-team-description-container>.tm-section-title {
+        color: #87CEFA;
+    }
+}
+
+@media screen {
+    .flex-2-col {
+        display: flex;
+    }
+
+    /* task2 */
+    ul li.box-bg h2:hover {
+        background-color: #87CEFA;
+        color: white;
+    }
+
+    /* task3 and 10*/
+
+    /* p::first-letter {
+        /* color: #87CEFA; */
+        /* font-size: 30px; */
+    /* }  */
+
+    /* task4 */
+    .tm-sidebar, .tm-banner, .tm-content-box {
+        box-shadow: 0 0 10px gray;
+    }
+
+    div.tm-banner {
+        background: linear-gradient(to right, lightskyblue, burlywood);
+    }
+
+    .tm-banner-inner {
+        background-color: white;
+    }
+
+    p.tm-banner-text {
+        text-shadow: 6px 5px 3px #333;
+    }
+
+    /* task5 */
+    section {
+        position: relative;
+    }
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 30px solid #87CEFA;
+        border-right: 130px solid transparent;
+        z-index: 1;
+    }
+
+    /* task6-8 */
+    .tm-content-box h2.tm-section-title {
+        color: lightskyblue;
+        /* letter-spacing: 5px; */
+        /* margin-top: 55%; */
+    }
+
+    .tm-team-description-container {
+        /* background-color: rgba(51, 51, 51, 0.185); */
+        /* width: 70%; */
+    }
+
+    ol {
+        list-style-type: lower-alpha;
+    }
+
+    h2 + p {
+        font-style: italic;
+    }
+
+    p.tm-section-description,
+    h2.tm-section-title {
+        text-align: center;
+    }
+
+    p {
+        line-height: 1.5;
+        text-indent: 1.5em;
+    }
+
+    /* 9 */
+    ol a:visited {
+        text-decoration: underline;
+    }
+
+    ol a:hover {
+        text-decoration: underline;
+        color: #87CEFA;
+    }
+    .text {
+        position: relative;
+    }
+    .text::before {
+        content: "New";
+        position: absolute;
+        top: 0;
+        right: -20px;
+        color: #FF0000;
+        font-size: 10px;
+    }
+
+    /* 10 */
+    .box-work:nth-child(odd) {
+        background-color: rgba(135, 206, 250, .9);
+        color: white;
+    }
+
+    /* 11 */
+    .submit-btn {
+        position: absolute;
+        right: 40px;
+        bottom: 5px;
+        background-color: #fff;
+        border-color: #6bdcff;
+        color: #6bdcff;
+        height: 45px;
+        width: 150px;
+    }
+    .submit-btn:hover {
+        background-color: #9fd8fb;
+        color: #fff;
+    }
+    .contact-form input {
+        color: red;
+    }
+    .mandatory-field::after {
+        content: "*";
+        color: red;
+        font-weight: bold;
+    }
+    /* 12 */
+    .tm-nav-item:hover {
+        background-color: rgba(128, 128, 128, 0.2);
+    }
+}
