@@ -1,0 +1,279 @@
+
+
+@mixin word_select($color){
+    content: '';
+    position: absolute;
+    background-color: $color;
+    opacity: 1;
+    z-index: -1;
+}
+
+.header{
+    background-image: url($image);
+    background-repeat: no-repeat;
+    border-radius: 0% 0% 40% 50% / 100% 60% 40% 0% ;
+    background-position: top -220px left 0px;
+    height: 600px;
+    &::after{
+        @include word_select($background-color);
+        //background-color: $background-color;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        z-index: -1;
+        //top: 0px;
+    }
+    color: $text-color;
+    .landing-logo{
+        margin-top: 10px;
+        display: flex;
+        margin-left: $m1;
+        p{
+            
+            font-family: $font-style, sans-serif;
+            margin-top: 20px;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 25px;
+            text-align: center;
+            letter-spacing: 0px;
+        }
+
+        span{
+            display: flex;
+            text-indent: 5px;
+            font-size: 12px;
+            margin-top: $m2;
+            font-weight: normal;
+            letter-spacing: normal;
+        }
+        img{
+            height: 50px;
+            margin-top: 20px;
+            //margin-left: -200px;
+        }
+    }
+    .header_heading{
+        @extend.landing-logo;
+        margin-top: 50px;
+        margin-right: 600px;
+        line-height: 80%;
+        font-family: 'Hind', sans-serif;
+        font-size: 70px;
+        display: flex;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+
+        &::after{
+            @include word_select($word-b);
+            top: 60px;
+            left: 0px;
+            height: 50px;
+            width: 300px;
+            //z-index: -1;
+        }
+    }
+    .header_text{
+        margin-left: $m1;
+        margin-top: -50px;
+        font-family: $font-style, sans-serif;
+        font-size: 20px;
+        white-space: pre-line;
+    }
+    
+    button{
+        display: inline;
+        @extend .landing-logo;
+        @include button_make;
+    }
+
+    a{
+        margin-left: 150px;
+        @include link_make;
+    }
+}
+.section_card_wrap .section_card{
+    display: flex;
+    flex-direction: column;
+    background-color: $c-color;
+    border: 10px solid $c-color;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    .section_card_img{
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+    }
+    
+    .section_card_right_container{
+        display: flexbox;
+        .section_card_heading{
+            flex-direction: column;
+            text-align: center;
+            margin-left: 300px;
+            margin-top: -160px;
+            font-family: 'Hind', sans-serif;
+            color: silver;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .section_card_text{
+            @extend .section_card_heading;
+            font-family: 'Fresca', sans-serif;
+            font-size: 15px;
+            font-weight: normal;
+            flex-direction: column;
+            text-align: justify;
+            margin-left: 340px;
+            margin-right: 40px;
+            margin-top: -10px;
+        }
+        .section_link{
+            //@extend .section_card_text;
+            @include link_make;
+            margin-left: 500px;
+        }
+    }
+    
+}
+
+.section_banner{
+    content: '';
+    position: relative;
+    background: linear-gradient(to right, $gradient1, $gradient2);
+    margin: auto;
+    margin-top: 100px;
+    width: 70%;
+    border-radius: 10px;
+    height: 150px;
+    z-index: 1;
+    .section_banner_text{
+        @extend .section_banner_heading;
+        color: silver;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: $font-style, sans-serif;
+        margin-top: 80px;
+        
+        &::after{
+            @include word_select($word-b);
+            top: -55px;
+            left: 125px;
+            height: 35px;
+            width: 62px;
+        }
+    }
+    .section_banner_heading{
+        position: absolute;
+        font-family: 'Hind', sans-serif;
+        font-size: 30px;
+        margin-left: 120px;        
+        color: $text-color;
+        margin-top: 20px;
+        font-weight: bolder;
+    }
+    
+    button{
+        @extend .landing-logo;
+        @include button_make;
+        position: absolute;
+        top: 0px;
+        left: 750px;
+        font-weight: bold;
+    }
+}
+@mixin button_make{
+    margin-top: 50px;
+    background-color: $button-b;
+    font-size: 20px;
+    font-family: 'Hind', sans-serif;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+@mixin link_make {
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: normal;
+}
+.section{
+    background-color: $background-color;
+}
+
+.section_text{
+    color: $text-color;
+    font-family: 'Hind', sans-serif;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    &::after{
+        @include word_select($word-b);
+        top: 3px;
+        left: 677px;
+        height: 40px;
+        width: 138px;
+    }
+}
+
+
+
+footer{
+    margin-top: -72px;
+    margin-bottom: 0px;
+    background-color: #3b3f50;
+    height: 230px;
+    .footer_logo{
+        margin-top: 10px;
+        display: flex;
+        margin-left: $m1 - 105px;
+        display: flex;
+        p{
+            margin-top: 105px;
+            margin-left: 5px;
+            font-weight: bold;
+            font-family: $font-style, sans-serif;
+            font-size: 25px;
+            text-align: center;
+            letter-spacing: 0px;
+            text-indent: 5px;
+            color: silver;
+        }
+
+        span{
+            display: flex;
+            text-indent: 5px;
+            font-size: 13px;
+            margin-top: $m2;
+            font-weight: normal;
+            letter-spacing: normal;
+        }
+        img{
+            height: 50px;
+            margin-top: 100px;
+        }
+    }
+    .footer_text{
+        position: absolute;
+        margin-top: $m3;
+        margin-left: 510px;
+        margin-right: 510px;
+        font-family: $font-style, sans-serif;
+        color: silver;
+        text-align: justify;        
+    }
+    .footer-cr{
+        color: silver;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 1050px;
+    }
+}
